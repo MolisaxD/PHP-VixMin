@@ -1,0 +1,26 @@
+// CSS personalizado - é importado na classe app.scss
+body{
+    background-color:#466258;
+}
+
+.navbar-color{
+    background-color: #F4FFDC;
+}
+
+.navbar-brand{
+    margin-left: 50px;
+}
+
+.navbar-nav{
+    margin-left: 50px;
+}
+
+.slide{
+    margin: auto;
+}
+.content-container{
+    max-width: 80%;
+    min-height: 100vh;
+    background-color: white;
+    margin: auto; 
+}
