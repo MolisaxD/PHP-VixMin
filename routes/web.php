@@ -30,3 +30,11 @@ Route::get('/home',
 Route::get('disciplinas', 
 [App\Http\Controllers\DisciplinaController::class, 'index'])
 ->name('disciplinas');
+
+Route::get('editar',
+[App\Http\Controllers\DisciplinaController::class, 'edit'])
+->name('editar');
+
+Route::put('atualizar',
+[App\Http\Controllers\DisciplinaController::class, 'update'])
+->name('atualizar');

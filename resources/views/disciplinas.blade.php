@@ -2,15 +2,17 @@
 
 @section('content')
 
+
+
 <div class="content-container">
     <table class="table table-hover table-striped">
         <thead>
             <tr>
-                <th>ID</td>
-                <th width="50%">Disciplina</td>
-                <th>Criado em</td>
-                <th>Atualizado em</td>
-                
+                <th>ID</th>
+                <th width="50%">Disciplina</th>
+                <th>Criado em</th>
+                <th>Atualizado em</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -28,9 +30,22 @@
                 <td>
                     <li>{{ $disciplina->updated_at }}</li>
                 </td>
+                <td>
+                    <a href="{{ route('editar', 
+                    ['id' => $disciplina->id]) }}" 
+                    class="btn btn-secondary btn-sm">Editar</a>
+                    <a class="btn btn-danger btn-sm">Excluir</a>
+                </td>
             </tr>
             @endforeach
         </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="5">
+                    # Número de registros: {{ App\Models\Disciplina::count() }} 
+                </th>
+            </tr>
+        </tfoot>
     </table>
 </div>
 
