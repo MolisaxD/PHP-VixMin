@@ -21,20 +21,38 @@ Route::get('teste',
 [App\Http\Controllers\TesteController::class, 'index'])
 ->name('teste');
 
-Auth::routes();
-
 Route::get('/home', 
 [App\Http\Controllers\HomeController::class, 'index'])
 ->name('home');
 
-Route::get('disciplinas', 
+//READ
+Route::get('disciplinas.index', 
 [App\Http\Controllers\DisciplinaController::class, 'index'])
-->name('disciplinas');
+->name('disciplinas.index');
 
-Route::get('editar',
+//EDIT
+Route::get('disciplina/editar',
 [App\Http\Controllers\DisciplinaController::class, 'edit'])
-->name('editar');
+->name('disciplina.editar');
 
-Route::put('atualizar',
+Route::put('atualizar/{id}',
 [App\Http\Controllers\DisciplinaController::class, 'update'])
-->name('atualizar');
+->name('disciplina.atualizar');
+
+
+//CREATE
+Route::get('/disciplina/novo',
+[App\Http\Controllers\DisciplinaController::class, 'create'])
+->name('disciplina.novo');
+
+Route::post('/disciplina/incluir',
+[App\Http\Controllers\DisciplinaController::class, 'store'])
+->name('disciplina.incluir');
+
+
+//DELETE
+Route::get('/disciplina/{id}/excluir',
+[App\Http\Controllers\DisciplinaController::class, 'destroy'])
+->name('disciplina.excluir');
+
+Auth::routes();

@@ -3,7 +3,7 @@
 
 @section('content')
 
-<form class="card" action="{{route('atualizar', ['id' => $disciplina->id])}}" method="POST">
+<form class="card" action="{{route('disciplina.atualizar', ['id' => $disciplina->id])}}" method="POST">
 
     @method('PUT')
     @csrf
@@ -28,8 +28,11 @@
     </div>
 
     <div class="card-footer text-center">
-        <button type="submit" class="btn btn-danger">Atualizar</button>
+        <a href="{{route('disciplinas.index')}}" class="btn btn-primary">
+            Voltar
+        </a>
         <button type="reset" class="btn btn-secondary">Limpar</button>
+        <button type="submit" class="btn btn-danger">Atualizar</button>
     </div>
 </form>
 

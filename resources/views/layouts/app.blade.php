@@ -20,7 +20,7 @@
     <div id="app">
     {{-- navbar --}}
     @include('inicio.navbar')
-        <main>
+        <main class="content-container">
             @yield('content')
         </main>
     </div>

@@ -23,15 +23,18 @@ class DisciplinaController extends Controller
      */
     public function create()
     {
-        //
+        return view('form-incluir-disciplina');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreDisciplinaRequest $request)
+    public function store(Request $request)
     {
-        //
+        $disciplina = new \App\Models\Disciplina;
+        $disciplina->create(['disciplina' => $request->disciplina]);
+
+        return Redirect()->route('disciplinas.index');
     }
 
     /**
@@ -49,7 +52,7 @@ class DisciplinaController extends Controller
     {
         $disciplina = \App\Models\Disciplina::find($request->id);
 
-        return view('form-disciplinas', ['disciplina' => $disciplina ]);
+        return view('form-editar-disciplina', ['disciplina' => $disciplina ]);
     }
 
     /**
@@ -57,14 +60,22 @@ class DisciplinaController extends Controller
      */
     public function update(Request $request, Disciplina $disciplina)
     {
-        dd($request);
+        $d = Disciplina::find($request->id);
+        $d->disciplina = $request->disciplina;
+
+        $d->save();
+        
+        return Redirect()->route('disciplinas.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Disciplina $disciplina)
+    public function destroy(int $id)
     {
-        //
+        $disciplina = \App\Models\Disciplina::find($id);
+        $disciplina->delete();
+
+        return Redirect()->route('disciplinas.index');
     }
 }
