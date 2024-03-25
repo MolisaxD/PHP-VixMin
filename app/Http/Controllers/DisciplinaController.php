@@ -15,7 +15,7 @@ class DisciplinaController extends Controller
     public function index()
     {
         $disciplinas = \App\Models\Disciplina::all();
-        return view('disciplinas',['disciplinas' => $disciplinas]);
+        return view('disciplinas.disciplinas',['disciplinas' => $disciplinas]);
     }
 
     /**
@@ -23,7 +23,7 @@ class DisciplinaController extends Controller
      */
     public function create()
     {
-        return view('form-incluir-disciplina');
+        return view('disciplinas.form-incluir-disciplina');
     }
 
     /**
@@ -52,7 +52,7 @@ class DisciplinaController extends Controller
     {
         $disciplina = \App\Models\Disciplina::find($request->id);
 
-        return view('form-editar-disciplina', ['disciplina' => $disciplina ]);
+        return view('disciplinas.form-editar-disciplina', ['disciplina' => $disciplina ]);
     }
 
     /**

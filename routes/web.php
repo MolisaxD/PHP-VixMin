@@ -35,7 +35,7 @@ Route::get('disciplina/editar',
 [App\Http\Controllers\DisciplinaController::class, 'edit'])
 ->name('disciplina.editar');
 
-Route::put('atualizar/{id}',
+Route::put('disciplina.atualizar/{id}',
 [App\Http\Controllers\DisciplinaController::class, 'update'])
 ->name('disciplina.atualizar');
 

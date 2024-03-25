@@ -5,7 +5,7 @@
 <a href="{{route('disciplinas.index')}}" class="btn btn-primary m-2">
     Inicio
 </a>
-<a href="{{route('disciplina.novo')}}" class="btn btn-primary m-2">
+<a href="{{route('disciplina.novo')}}" class="btn btn-primary">
     Novo
 </a>
 

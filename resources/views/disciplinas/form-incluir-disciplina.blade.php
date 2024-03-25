@@ -36,8 +36,11 @@
     </div>
 
     <div class="card-footer text-center">
-        <button type="submit" class="btn btn-danger">Adicionar</button>
+        <a href="{{route('disciplinas.index')}}" class="btn btn-primary">
+            Voltar
+        </a>
         <button type="reset" class="btn btn-secondary">Limpar</button>
+        <button type="submit" class="btn btn-danger">Adicionar</button>
     </div>
 </form>
 
