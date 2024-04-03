@@ -3,12 +3,6 @@
 
 @section('content')
 
-<div class="card p-2">
-    <div class="card-header">
-        <div class="card-title">Inclusão de Disciplina</div>
-    </div>
-</div>
-
 <form class="card" action="{{route('disciplina.incluir')}}" method="POST">
 
     @csrf
@@ -20,9 +14,6 @@
     </div>
 
     <div class="card-body">
-        <a href="{{route('disciplina.incluir')}}" class="btn btn-primary">
-            Novo
-        </a>
         <div class="form-group">
             <label for="id" class="label-form">ID</label>
             <input type="number" name="id" id="id" class="form-control" 

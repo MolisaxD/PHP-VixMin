@@ -30,6 +30,10 @@ Route::get('disciplinas.index',
 [App\Http\Controllers\DisciplinaController::class, 'index'])
 ->name('disciplinas.index');
 
+Route::get('servicos.index',
+[App\Http\Controllers\ServicoController::class, 'index'])
+->name('servicos.index');
+
 //EDIT
 Route::get('disciplina/editar',
 [App\Http\Controllers\DisciplinaController::class, 'edit'])
@@ -49,6 +53,13 @@ Route::post('/disciplina/incluir',
 [App\Http\Controllers\DisciplinaController::class, 'store'])
 ->name('disciplina.incluir');
 
+Route::get('/servico/novo',
+[App\Http\Controllers\ServicoController::class, 'create'])
+->name('servico.novo');
+
+Route::post('/servico/incluir',
+[App\Http\Controllers\ServicoController::class, 'store'])
+->name('servico.incluir');
 
 //DELETE
 Route::get('/disciplina/{id}/excluir',
